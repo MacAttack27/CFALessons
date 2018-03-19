@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var descLabel: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,6 +31,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func lessonLinkButton(_ sender: Any) {
+        if let url = URL(string: "https://www.nerdwallet.com/?trk=nw_gn_4.0") {
+            UIApplication.shared.canOpenURL(url)
+            
+            UIApplication.shared.open(url, options: [:], completionHandler:nil)
+        }
+    }
 }
 
